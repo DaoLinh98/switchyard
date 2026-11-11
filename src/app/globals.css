@@ -1,0 +1,106 @@
+/* Design tokens taken verbatim from the Switchyard design canvas. */
+:root {
+  --bg: #0B0D10;
+  --side: #0E1014;
+  --card: #12151A;
+  --line: #1E232B;
+  --line-2: #2A303A;
+  --row: #252A33;
+  --chip: #181C22;
+  --text: #E8EAED;
+  --soft: #C9CED6;
+  --muted: #9AA3AF;
+  --dim: #7D8796;
+  --faint: #5B6573;
+  --accent: #E8D3A8;
+  --accent-hover: #F5E6C8;
+  --lime: #7FD9A0;
+  --amber: #F5D04F;
+  --coral: #FF5C7A;
+
+  --f-body: var(--font-inter), Inter, system-ui, sans-serif;
+  --f-head: var(--font-grotesk), "Space Grotesk", sans-serif;
+  --f-mono: var(--font-mono), "JetBrains Mono", monospace;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); }
+body { font-family: var(--f-body); color: var(--text); }
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+button, input, select { font-family: inherit; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Shell ---------- */
+.shell { min-height: 100vh; display: flex; flex-wrap: wrap; align-items: stretch; background: var(--bg); }
+
+.sidebar {
+  flex: 1 1 248px; max-width: 100%; background: var(--side); border-right: 1px solid var(--line);
+  padding: 24px 16px; display: flex; flex-direction: column; gap: 24px;
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; }
+.brand-name { font-family: var(--f-head); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.proxy-box {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.proxy-state { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+.proxy-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px rgba(127,217,160,0.15); }
+.proxy-url { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.nav-link {
+  display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 10px;
+  color: var(--muted); text-decoration: none; font-size: 14px;
+}
+.nav-link:hover { color: var(--text); background: var(--card); }
+.nav-link[aria-current="page"] { color: var(--bg); background: var(--accent); font-weight: 600; }
+
+.main {
+  flex: 999 1 560px; min-width: 0; padding: 40px clamp(16px, 4vw, 48px) 64px;
+  display: flex; flex-direction: column; gap: 36px;
+}
+
+/* ---------- Shared pieces ---------- */
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.page-title { margin: 0; font-family: var(--f-head); font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; }
+.lede { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.h2 { margin: 0; font: 600 20px var(--f-head); }
+.hint { font-size: 13px; color: var(--muted); }
+.mono { font-family: var(--f-mono); }
+
+.tile { display: grid; place-items: center; flex-shrink: 0; font-family: var(--f-head); font-weight: 700; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 500; white-space: nowrap;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge-ok { color: var(--lime); background: rgba(127,217,160,0.10); }
+.badge-warn { color: var(--amber); background: rgba(245,208,79,0.10); }
+.badge-limit { color: var(--coral); background: rgba(255,92,122,0.10); }
+.badge-muted { color: var(--muted); background: var(--line); }
+
+.bar { display: block; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.bar > span { display: block; height: 100%; border-radius: 3px; }
+
+.search {
+  display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; color: var(--dim);
+}
+.search input { flex: 1; min-width: 0; background: transparent; border: 0; outline: none; color: var(--text); font-size: 14px; }
+
+.segmented { display: inline-flex; gap: 4px; padding: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+.segmented button {
+  min-height: 36px; padding: 0 12px; border-radius: 8px; border: 0; font: 500 13px var(--f-body); cursor: pointer;
+  background: transparent; color: var(--muted);
+}
+.segmented button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+
+.empty {
+  padding: 28px; border: 1px dashed var(--line-2); border-radius: 18px; color: var(--muted); font-size: 14px; line-height: 1.5;
+}

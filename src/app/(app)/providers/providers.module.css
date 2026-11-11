@@ -1,0 +1,43 @@
+.header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.intro { display: flex; flex-direction: column; gap: 8px; max-width: 640px; }
+.search { width: 280px; max-width: 100%; }
+
+.section { display: flex; flex-direction: column; gap: 16px; }
+.sectionHead { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.sectionHeadCenter { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filter { margin-left: auto; }
+
+.connectedGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+.card {
+  text-decoration: none; color: var(--text); background: var(--card); border: 1px solid var(--line);
+  border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 18px;
+}
+.card:hover { color: var(--text); border-color: var(--line-2); }
+.cardHead { display: flex; align-items: flex-start; gap: 14px; }
+.tileLg { width: 44px; height: 44px; border-radius: 12px; font-size: 16px; }
+.tileSm { width: 36px; height: 36px; border-radius: 10px; font-size: 12px; }
+.cardTitle { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.cardName { font: 600 18px var(--f-head); }
+
+.accounts { display: flex; flex-direction: column; gap: 12px; }
+.account { display: flex; flex-direction: column; gap: 6px; }
+.accountLine { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; }
+.accountNote { font-family: var(--f-mono); font-size: 12px; white-space: nowrap; }
+.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.cardFoot {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px;
+  border-top: 1px solid var(--line); font-size: 13px; color: var(--muted);
+}
+.footValue { font-family: var(--f-mono); color: var(--text); }
+.open { color: var(--accent); font-weight: 500; }
+
+.oauthGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.oauthItem {
+  display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 14px; border-radius: 14px;
+  background: var(--card); border: 1px solid var(--line); text-decoration: none; color: var(--text);
+}
+.oauthItem:hover { color: var(--text); border-color: var(--line-2); }
+.oauthName { font-size: 14px; font-weight: 600; }
+.oauthSub { font-size: 12px; }
+.plus { color: var(--faint); font-size: 18px; }
