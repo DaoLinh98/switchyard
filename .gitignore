@@ -1,0 +1,39 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+obs*.txt
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env and secrets
+.env*.local
+.env
+
+# Switchyard runtime state & keys
+.switchyard
+
+# Project instructions and secrets
+CLAUDE.md
+KNOWLEDGE.md
+SKILL.md

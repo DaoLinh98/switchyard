@@ -1,0 +1,131 @@
+.header {
+  margin-bottom: 32px;
+}
+
+.intro {
+  max-width: 680px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  min-height: 180px;
+}
+
+.card:not(.disabled):hover {
+  border-color: var(--line-2);
+  transform: translateY(-2px);
+}
+
+.card.disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.cardTop {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tile {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-family: var(--f-head);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.badgeConfigured {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--lime);
+  background: rgba(127, 217, 160, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 217, 160, 0.2);
+}
+
+.badgeComingSoon {
+  font-size: 11px;
+  color: var(--dim);
+  background: var(--chip);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.modelsCount {
+  color: var(--soft);
+}
+
+.openLink {
+  color: var(--soft);
+  font-weight: 500;
+}
